@@ -1,10 +1,11 @@
-import './style.css'
+import './style.scss'
+import HeaderProfil from '../../components/HeaderProfil'
 
 function Profil() {
   return (
-    <div>
-      <h1>Page profil !</h1>
-    </div>
+    <main className="page-profil">
+      <HeaderProfil />
+    </main>
   )
 }
 

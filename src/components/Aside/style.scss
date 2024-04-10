@@ -1,0 +1,29 @@
+.aside {
+  position: relative;
+  background-color: #020203;
+  width: 117px;
+  min-height: 780px;
+}
+
+.bloc-icones {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__icone {
+    margin-bottom: 20px;
+  }
+}
+
+.copiryght {
+  position: absolute;
+  width: 150px;
+  bottom: 120px;
+  left: -20px;
+  margin: 0;
+  transform: rotate(-90deg);
+  color: #fff;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+}

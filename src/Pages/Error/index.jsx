@@ -1,0 +1,14 @@
+import './style.scss'
+import { Link } from 'react-router-dom'
+
+function Error() {
+  return (
+    <main className="error-content">
+      <h1>404</h1>
+      <p>Oups! La page que vous demandez n'existe pas.</p>
+      <Link to="/profil">Retourner sur la page de profil</Link>
+    </main>
+  )
+}
+
+export default Error
