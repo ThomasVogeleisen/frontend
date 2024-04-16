@@ -1,4 +1,29 @@
 .page-profil {
   margin-top: 68px;
   margin-left: 109px;
+  margin-right: 90px;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.content-left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 31px;
+  width: 70%;
+}
+
+.content-left-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.content-right {
+  display: flex;
+  flex-direction: column;
 }

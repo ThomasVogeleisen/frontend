@@ -5,8 +5,6 @@ import { mockedData } from '../../mocks/mocks'
 const usersDatas = mockedData.user18.info
 // const usersDatas = await callApi('18')
 
-console.log(usersDatas.data.userInfos.firstName)
-
 function HeaderProfil() {
   return (
     <>
