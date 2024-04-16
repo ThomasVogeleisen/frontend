@@ -1,8 +1,16 @@
 import { mockedData } from '../mocks/mocks'
 
-// console.log(mockedData.user18.average_sessions.data.sessions)
+// console.log(mockedData.user18.performance.data.data)
 
 const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
+const performances = [
+  'Intensité',
+  'Vitesse',
+  'Force',
+  'Endurance',
+  'Energie',
+  'Cardio',
+]
 
 class MockedModeling {
   user(datas) {
@@ -19,6 +27,12 @@ class MockedModeling {
     ) {
       datas.user18.average_sessions.data.sessions[i].day = days[i]
     }
+    // modeling performances
+    for (let i = 0; i < datas.user18.performance.data.data.length; i++) {
+      datas.user18.performance.data.data[i].kind = performances[i]
+    }
+
+    console.log(datas.user18.performance.data.data)
 
     return {
       name: datas.user18.info.data.userInfos.firstName,
@@ -28,6 +42,9 @@ class MockedModeling {
       },
       average_sessions: {
         sessions: datas.user18.average_sessions.data.sessions,
+      },
+      performance: {
+        sessions: datas.user18.performance.data.data,
       },
     }
   }
