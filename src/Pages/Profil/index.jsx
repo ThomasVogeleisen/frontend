@@ -4,6 +4,12 @@ import Activite from '../../components/Activite'
 import Score from '../../components/Score'
 import AverageSession from '../../components/AverageSession'
 import Intensity from '../../components/Intensity'
+import Counter from '../../components/Counter'
+import { userDatas } from '../../utils/DataModeling'
+import caloriesIcon from '../../assets/calories-icon.png'
+import proteinIcon from '../../assets/protein-icon.png'
+import carbsIcon from '../../assets/carbs-icon.png'
+import fatIcon from '../../assets/fat-icon.png'
 
 function Profil() {
   return (
@@ -21,26 +27,30 @@ function Profil() {
           </div>
         </div>
         <div className="content-right">
-          <p
-            style={{ backgroundColor: 'grey', width: '258px', height: '124px' }}
-          >
-            calories
-          </p>
-          <p
-            style={{ backgroundColor: 'grey', width: '258px', height: '124px' }}
-          >
-            proteines
-          </p>
-          <p
-            style={{ backgroundColor: 'grey', width: '258px', height: '124px' }}
-          >
-            glucides
-          </p>
-          <p
-            style={{ backgroundColor: 'grey', width: '258px', height: '124px' }}
-          >
-            lipides
-          </p>
+          <Counter
+            name="Calories"
+            value={userDatas.keyData.calories}
+            picture={caloriesIcon}
+            units="KCal"
+          />
+          <Counter
+            name="Proteines"
+            value={userDatas.keyData.proteines}
+            picture={proteinIcon}
+            units="g"
+          />
+          <Counter
+            name="Glucides"
+            value={userDatas.keyData.glucides}
+            picture={carbsIcon}
+            units="g"
+          />
+          <Counter
+            name="Lipides"
+            value={userDatas.keyData.lipides}
+            picture={fatIcon}
+            units="g"
+          />
         </div>
       </div>
     </main>

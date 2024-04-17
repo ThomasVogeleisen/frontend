@@ -1,6 +1,6 @@
 import { mockedData } from '../mocks/mocks'
 
-// console.log(mockedData.user18.performance.data.data)
+// console.log(mockedData.user18.info.data.keyData)
 
 const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
 const performances = [
@@ -32,11 +32,15 @@ class MockedModeling {
       datas.user18.performance.data.data[i].kind = performances[i]
     }
 
-    console.log(datas.user18.performance.data.data)
-
     return {
       name: datas.user18.info.data.userInfos.firstName,
       score: datas.user18.info.data.score * 100,
+      keyData: {
+        calories: datas.user18.info.data.keyData.calorieCount,
+        proteines: datas.user18.info.data.keyData.proteinCount,
+        glucides: datas.user18.info.data.keyData.carbohydrateCount,
+        lipides: datas.user18.info.data.keyData.lipidCount,
+      },
       activity: {
         sessions: datas.user18.activity.data.sessions,
       },
@@ -53,4 +57,4 @@ class MockedModeling {
 const dataModelingMock = new MockedModeling()
 export const userDatas = dataModelingMock.user(mockedData)
 
-console.log(userDatas)
+// console.log(userDatas)
