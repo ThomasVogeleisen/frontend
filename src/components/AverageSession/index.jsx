@@ -1,8 +1,7 @@
 import './style.scss'
+import { useParams } from 'react-router-dom'
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts'
-import { userDatas } from '../../utils/DataModeling'
-
-const data = userDatas.average_sessions.sessions
+import { selectApiOrMock } from '../../utils/selectApiOrMock'
 
 const renderTooltip = ({ payload }) => {
   if (!payload || payload.length === 0) return null
@@ -10,6 +9,9 @@ const renderTooltip = ({ payload }) => {
 }
 
 function AverageSession() {
+  const { id } = useParams()
+  const userDatas = selectApiOrMock(id)
+  const data = userDatas.average_sessions.sessions
   return (
     <div className="average-session-container">
       <ResponsiveContainer width="100%" height="100%">

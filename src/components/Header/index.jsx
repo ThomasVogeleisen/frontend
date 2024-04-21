@@ -14,7 +14,7 @@ function Header() {
         <Link className="navbar__link" to="/">
           Accueil
         </Link>
-        <Link className="navbar__link" to="/profil">
+        <Link className="navbar__link" to="/profil/18">
           Profil
         </Link>
         <Link className="navbar__link" to="/reglages">

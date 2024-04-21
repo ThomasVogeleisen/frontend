@@ -1,10 +1,14 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
+import { useParams } from 'react-router-dom'
 
 import './style.scss'
-import { userDatas } from '../../utils/DataModeling'
+import { selectApiOrMock } from '../../utils/selectApiOrMock'
 
 function Activite() {
+  const { id } = useParams()
+  const userDatas = selectApiOrMock(id)
   const sessions = userDatas.activity.sessions
+
   return (
     <div className="chartContainer">
       <BarChart

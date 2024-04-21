@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from '../Header'
 import Aside from '../Aside'
+import Home from '../../Pages/Home'
 import Profil from '../../Pages/Profil'
 import Error from '../../Pages/Error'
 import './style.scss'
@@ -13,7 +14,8 @@ function Routeur() {
         <Aside />
 
         <Routes>
-          <Route path="/profil" element={<Profil />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/profil/:id" element={<Profil />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
