@@ -1,14 +1,26 @@
 import './style.scss'
-import { Link } from 'react-router-dom'
 
-function Home() {
+function Home({
+  apiDatas,
+  mocksDatas,
+  useApiData,
+  setUseApiData,
+  setCurentDatas,
+}) {
+  const toggleDatasSource = () => {
+    if (Object.keys(apiDatas).length === 0) {
+      console.log('No API datas')
+      return
+    }
+    setUseApiData((prevStat) => !prevStat)
+    setCurentDatas(useApiData ? mocksDatas : apiDatas)
+    console.log('Datas source changed')
+  }
   return (
     <main className="error-content">
       <h1>ACCUEIL</h1>
-      <h2>Aller sur la page profil avec</h2>
-      <Link to="/profil/12">Les données API</Link>
-      <br />
-      <Link to="/profil/18">Les données Mockés</Link>
+      <h3>Origine des données : {useApiData ? 'API' : 'MOCK'}</h3>
+      <button onClick={toggleDatasSource}>CHANGE</button>
     </main>
   )
 }

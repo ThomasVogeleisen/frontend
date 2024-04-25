@@ -1,15 +1,11 @@
 import { RadialBarChart, RadialBar, PolarAngleAxis } from 'recharts'
 import './style.scss'
-import { useParams } from 'react-router-dom'
-import { selectApiOrMock } from '../../utils/selectApiOrMock'
 
-function Score() {
-  const { id } = useParams()
-  const userDatas = selectApiOrMock(id)
+function Score({ curentDatas }) {
   const data = [
     {
       name: 'score',
-      value: userDatas.score,
+      value: curentDatas.score,
       fill: '#FF0000',
     },
   ]

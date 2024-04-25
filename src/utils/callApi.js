@@ -1,5 +1,4 @@
-export async function callApi(params) {
-  const apiUrl = 'http://localhost:3000/user/'
+export async function callApi(apiUrl, params) {
   try {
     const response = await fetch(apiUrl + params)
 

@@ -1,14 +1,10 @@
 import './style.scss'
-import { selectApiOrMock } from '../../utils/selectApiOrMock'
-import { useParams } from 'react-router-dom'
 
-function HeaderProfil() {
-  const { id } = useParams()
-  let userDatas = selectApiOrMock(id)
+function HeaderProfil({ curentDatas }) {
   return (
     <>
       <h1 className="profil-title">
-        Bonjour <span>{userDatas.name}</span>
+        Bonjour <span>{curentDatas.name}</span>
       </h1>
       <p className="profil-subtitle">
         Félicitation ! Vous avez explosé vos objectifs hier 👏

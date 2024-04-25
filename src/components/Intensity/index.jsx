@@ -1,5 +1,3 @@
-import { useParams } from 'react-router-dom'
-import { selectApiOrMock } from '../../utils/selectApiOrMock'
 import './style.scss'
 import {
   Radar,
@@ -9,10 +7,8 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-function Intensity() {
-  const { id } = useParams()
-  const userDatas = selectApiOrMock(id)
-  const data = userDatas.performance.sessions
+function Intensity({ curentDatas }) {
+  const data = curentDatas.performance.sessions
   return (
     <div className="intensity-session">
       <ResponsiveContainer width="100%" height="100%">
