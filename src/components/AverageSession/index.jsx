@@ -6,12 +6,43 @@ const renderTooltip = ({ payload }) => {
   return <div className="tooltip">{payload[0].value} min</div>
 }
 
+const HoverTooltip = ({ points }) => {
+  return (
+    <rect
+      x={points[0].x}
+      y={0}
+      height="100%"
+      width="100%"
+      fill="rgba(0, 0, 0, 0.1)"
+    />
+  )
+}
+
 function AverageSession({ curentDatas }) {
   const data = curentDatas.average_sessions.sessions
   return (
-    <div className="average-session-container">
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart width={300} height={100} data={data}>
+    <article className="average-session-container">
+      <ResponsiveContainer>
+        <LineChart
+          data={data}
+          margin={{ top: 50, right: -15, left: -12, bottom: 16 }}
+        >
+          <text
+            x={29}
+            y={60}
+            dy={-20}
+            style={{
+              fontSize: '15px',
+              fontWeight: '500',
+              fill: '#FFF',
+              opacity: 0.504,
+            }}
+          >
+            Durée moyenne des
+            <tspan x={29} dy={20}>
+              sessions
+            </tspan>
+          </text>
           <defs>
             <linearGradient id="colorLength" x1="0" y1="1" x2="1" y2="1">
               <stop offset="5%" stopColor="#FFFFFF" stopOpacity={0.4} />
@@ -21,22 +52,32 @@ function AverageSession({ curentDatas }) {
           <XAxis
             dataKey="day"
             fontSize={12}
+            padding={{ left: 15, right: 15 }}
             stroke="#FFFFFF"
             opacity={0.5}
             tickLine={false}
             axisLine={false}
+            style={{ transform: 'scaleX(0.87) translate(20px)' }}
           />
-          <Tooltip cursor={false} content={renderTooltip} />
+          <Tooltip cursor={<HoverTooltip />} content={renderTooltip} />
           <Line
             type="monotone"
             dataKey="sessionLength"
             dot={false}
             stroke="url(#colorLength)"
             strokeWidth={2}
+            activeDot={{
+              background: '#FFFFFF',
+              stroke: 'rgba(255, 255, 255, 0.3)',
+              strokeWidth: 10,
+              r: 4,
+            }}
+            style={{ transform: 'scaleX(1.02) translate(-4px)' }}
           />
+          0
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </article>
   )
 }
 

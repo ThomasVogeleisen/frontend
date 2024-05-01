@@ -15,17 +15,23 @@ function Profil({ curentDatas }) {
     <main className="page-profil">
       <HeaderProfil curentDatas={curentDatas} />
       <div className="content">
-        <div className="content-left">
+        <section className="content-left">
           <div className="content-left-top">
             <Activite curentDatas={curentDatas} />
           </div>
           <div className="content-left-bottom">
-            <AverageSession curentDatas={curentDatas} />
-            <Intensity curentDatas={curentDatas} />
-            <Score curentDatas={curentDatas} />
+            <div className="graph-content">
+              <AverageSession curentDatas={curentDatas} />
+            </div>
+            <div className="graph-content">
+              <Intensity curentDatas={curentDatas} />
+            </div>
+            <div className="graph-content">
+              <Score curentDatas={curentDatas} />
+            </div>
           </div>
-        </div>
-        <div className="content-right">
+        </section>
+        <section className="content-right">
           <Counter
             name="Calories"
             value={curentDatas.keyData.calories}
@@ -50,7 +56,7 @@ function Profil({ curentDatas }) {
             picture={fatIcon}
             units="g"
           />
-        </div>
+        </section>
       </div>
     </main>
   )

@@ -10,8 +10,8 @@ import {
 function Intensity({ curentDatas }) {
   const data = curentDatas.performance.sessions
   return (
-    <div className="intensity-session">
-      <ResponsiveContainer width="100%" height="100%">
+    <article className="intensity-session">
+      <ResponsiveContainer>
         <RadarChart
           margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
           data={data}
@@ -26,11 +26,12 @@ function Intensity({ curentDatas }) {
             tickLine={false}
             stroke="#FFFFFF"
             dataKey="kind"
+            tick={{ dy: 4 }}
           />
           <Radar dataKey="value" fill="rgba(255, 1, 1)" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>
-    </div>
+    </article>
   )
 }
 

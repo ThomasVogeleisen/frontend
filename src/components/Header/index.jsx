@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png'
 import logo_txt from '../../assets/logo_txt.png'
 import { Link } from 'react-router-dom'
 
-function Header() {
+function Header({ id }) {
   return (
     <header className="header-principal">
       <div className="bloc-logo">
@@ -14,7 +14,7 @@ function Header() {
         <Link className="navbar__link" to="/">
           Accueil
         </Link>
-        <Link className="navbar__link" to="/profil/">
+        <Link className="navbar__link" to={'/profil/' + id}>
           Profil
         </Link>
         <Link className="navbar__link" to="/reglages">

@@ -36,7 +36,7 @@ function Routeur() {
 
   return (
     <Router>
-      <Header />
+      <Header id={curentDatas.id} />
       <div className="app-content">
         <Aside />
         <Routes>
@@ -53,7 +53,7 @@ function Routeur() {
             }
           />
           <Route
-            path="/profil"
+            path="/profil/:id"
             element={<Profil curentDatas={curentDatas} />}
           />
           <Route path="*" element={<Error />} />

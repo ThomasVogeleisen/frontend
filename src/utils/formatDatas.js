@@ -27,6 +27,7 @@ export function formatDatas(datas) {
   }
 
   return {
+    id: datas.info.data.id,
     name: datas.info.data.userInfos.firstName,
     score: datas.info.data.score * 100,
     keyData: {

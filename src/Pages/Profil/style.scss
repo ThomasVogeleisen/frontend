@@ -1,29 +1,46 @@
 .page-profil {
-  margin-top: 68px;
-  margin-left: 109px;
-  margin-right: 90px;
-  width: 100%;
+  // border: 2px solid red;
+  width: 80%;
+  margin: 50px auto;
 }
 
 .content {
+  // border: 2px solid blue;
   display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
   width: 100%;
 }
 
 .content-left {
+  // border: 2px solid red;
   display: flex;
   flex-direction: column;
-  margin-right: 31px;
+  justify-content: space-between;
   width: 70%;
 }
 
+.content-left-top {
+  // border: 2px solid blue;
+}
+
 .content-left-bottom {
+  // border: 2px solid blue;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+}
+
+.graph-content {
+  // border: 2px solid green;
+  width: 250px;
+  height: 250px;
 }
 
 .content-right {
+  // border: 2px solid red;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  width: 25%;
 }

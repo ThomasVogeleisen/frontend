@@ -2,7 +2,7 @@ import './style.scss'
 
 function Counter({ name, value, picture, units }) {
   return (
-    <div className="counter">
+    <article className="counter">
       <div className="bloc-logo">
         <img src={picture} alt={name} />
       </div>
@@ -13,7 +13,7 @@ function Counter({ name, value, picture, units }) {
         </p>
         <p className="bloc-text__title">{name}</p>
       </div>
-    </div>
+    </article>
   )
 }
 
