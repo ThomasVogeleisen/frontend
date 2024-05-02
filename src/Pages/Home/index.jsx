@@ -1,4 +1,5 @@
 import './style.scss'
+import PropTypes from 'prop-types'
 
 function Home({
   apiDatas,
@@ -23,6 +24,14 @@ function Home({
       <button onClick={toggleDatasSource}>CHANGE</button>
     </main>
   )
+}
+
+Home.propTypes = {
+  apiDatas: PropTypes.object.isRequired,
+  mocksDatas: PropTypes.object.isRequired,
+  useApiData: PropTypes.bool.isRequired,
+  setUseApiData: PropTypes.func.isRequired,
+  setCurentDatas: PropTypes.func.isRequired,
 }
 
 export default Home

@@ -1,5 +1,6 @@
 import './style.scss'
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import PropTypes from 'prop-types'
 
 const renderTooltip = ({ payload }) => {
   if (!payload || payload.length === 0) return null
@@ -79,6 +80,19 @@ function AverageSession({ curentDatas }) {
       </ResponsiveContainer>
     </article>
   )
+}
+
+AverageSession.propTypes = {
+  curentDatas: PropTypes.shape({
+    average_sessions: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          day: PropTypes.string.isRequired,
+          sessionLength: PropTypes.number.isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
 }
 
 export default AverageSession

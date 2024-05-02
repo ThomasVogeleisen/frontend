@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import './style.scss'
 import {
   Radar,
@@ -33,6 +34,19 @@ function Intensity({ curentDatas }) {
       </ResponsiveContainer>
     </article>
   )
+}
+
+Intensity.propTypes = {
+  curentDatas: PropTypes.shape({
+    performance: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          kind: PropTypes.string.isRequired,
+          value: PropTypes.number.isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
 }
 
 export default Intensity

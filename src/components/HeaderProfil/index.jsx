@@ -1,4 +1,5 @@
 import './style.scss'
+import PropTypes from 'prop-types'
 
 function HeaderProfil({ curentDatas }) {
   return (
@@ -11,6 +12,12 @@ function HeaderProfil({ curentDatas }) {
       </p>
     </>
   )
+}
+
+HeaderProfil.propTypes = {
+  curentDatas: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export default HeaderProfil

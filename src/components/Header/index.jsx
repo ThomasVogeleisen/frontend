@@ -2,6 +2,7 @@ import './style.scss'
 import logo from '../../assets/logo.png'
 import logo_txt from '../../assets/logo_txt.png'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function Header({ id }) {
   return (
@@ -26,6 +27,10 @@ function Header({ id }) {
       </nav>
     </header>
   )
+}
+
+Header.propTypes = {
+  id: PropTypes.number.isRequired,
 }
 
 export default Header

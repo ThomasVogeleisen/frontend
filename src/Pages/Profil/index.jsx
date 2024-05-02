@@ -9,6 +9,7 @@ import caloriesIcon from '../../assets/calories-icon.png'
 import proteinIcon from '../../assets/protein-icon.png'
 import carbsIcon from '../../assets/carbs-icon.png'
 import fatIcon from '../../assets/fat-icon.png'
+import PropTypes from 'prop-types'
 
 function Profil({ curentDatas }) {
   return (
@@ -60,6 +61,10 @@ function Profil({ curentDatas }) {
       </div>
     </main>
   )
+}
+
+Profil.propTypes = {
+  curentDatas: PropTypes.object.isRequired,
 }
 
 export default Profil

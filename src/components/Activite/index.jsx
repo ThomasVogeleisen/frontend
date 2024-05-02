@@ -8,9 +8,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
-
+import PropTypes from 'prop-types'
 import './style.scss'
-
 function Activite({ curentDatas }) {
   const sessions = curentDatas.activity.sessions
 
@@ -122,6 +121,20 @@ function Activite({ curentDatas }) {
       </ResponsiveContainer>
     </article>
   )
+}
+
+Activite.propTypes = {
+  curentDatas: PropTypes.shape({
+    activity: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          day: PropTypes.number.isRequired,
+          kilogram: PropTypes.number.isRequired,
+          calories: PropTypes.number.isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
 }
 
 export default Activite

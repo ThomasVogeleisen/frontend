@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import {
   RadialBarChart,
   RadialBar,
@@ -82,6 +83,12 @@ function Score({ curentDatas }) {
       </ResponsiveContainer>
     </div>
   )
+}
+
+Score.propTypes = {
+  curentDatas: PropTypes.shape({
+    score: PropTypes.number.isRequired,
+  }).isRequired,
 }
 
 export default Score

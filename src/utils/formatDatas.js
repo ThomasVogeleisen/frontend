@@ -1,3 +1,9 @@
+/**
+ * Fonction pour formater les données reçues.
+ * @param {Object} datas - Les données à formater.
+ * @returns {Object} Les données formatées.
+ */
+
 export function formatDatas(datas) {
   const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
   const performances = [
