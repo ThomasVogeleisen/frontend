@@ -1,44 +1,48 @@
 .page-profil {
-  // border: 2px solid red;
   width: 80%;
   margin: 50px auto;
+  @media (max-width: 1200px) {
+    margin: 0 auto;
+  }
 }
 
 .content {
-  // border: 2px solid blue;
   display: flex;
   justify-content: space-between;
   margin-top: 80px;
   width: 100%;
+  @media (max-width: 1200px) {
+    margin-top: 40px;
+  }
 }
 
 .content-left {
-  // border: 2px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 70%;
 }
 
-.content-left-top {
-  // border: 2px solid blue;
-}
-
 .content-left-bottom {
-  // border: 2px solid blue;
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }
 
 .graph-content {
-  // border: 2px solid green;
   width: 250px;
   height: 250px;
+  @media (max-width: 1400px) {
+    width: 200px;
+    height: 200px;
+  }
+  @media (max-width: 1130px) {
+    width: 180px;
+    height: 180px;
+  }
 }
 
 .content-right {
-  // border: 2px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

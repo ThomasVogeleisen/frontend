@@ -17,6 +17,13 @@ function Score({ curentDatas }) {
   ]
   return (
     <div className="score-container">
+      <div className="scoreText">
+        <p className="scoreText__value">{`${data[0].value}%`}</p>
+        <p className="scoreText__text">
+          de votre <br />
+          objectif
+        </p>
+      </div>
       <ResponsiveContainer>
         <RadialBarChart
           width={250}
@@ -28,7 +35,7 @@ function Score({ curentDatas }) {
           data={data}
         >
           <g>
-            <circle cx="125" cy="125" r="75" fill="#FFFFFF" />
+            <circle cx="50%" cy="50%" r="30%" fill="#FFFFFF" />
           </g>
           <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
           <RadialBar dataKey="value" cornerRadius={20} />
@@ -43,40 +50,6 @@ function Score({ curentDatas }) {
               fontWeight="700"
             >
               Score
-            </text>
-          </g>
-          <g>
-            <text
-              x={125}
-              y={125}
-              textAnchor="middle"
-              alignmentBaseline="middle"
-            >
-              <tspan
-                fill="#282D30"
-                fontWeight="700"
-                fontSize={26}
-                x={127}
-                dy={-5}
-              >{`${data[0].value}%`}</tspan>
-              <tspan
-                fill="#74798C"
-                fontSize={16}
-                fontWeight="700"
-                x={125}
-                dy={25}
-              >
-                de votre
-              </tspan>
-              <tspan
-                fill="#74798C"
-                fontSize={16}
-                fontWeight="700"
-                x={125}
-                dy={25}
-              >
-                objectif
-              </tspan>
             </text>
           </g>
         </RadialBarChart>

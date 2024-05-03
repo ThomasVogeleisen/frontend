@@ -20,7 +20,7 @@ function Intensity({ curentDatas }) {
           <PolarGrid
             gridType="polygon"
             radialLines={false}
-            polarRadius={[0, 10, 20, 45, 65]}
+            // polarRadius={[0, 10, 20, 45, 65]}
           />
           <PolarAngleAxis
             fontSize={12}

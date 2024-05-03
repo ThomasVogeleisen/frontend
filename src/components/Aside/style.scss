@@ -1,29 +1,28 @@
 .aside {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #020203;
   width: 117px;
-  height: 1000px;
+  height: auto;
 }
 
 .bloc-icones {
-  margin-top: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 21.8vh;
+  padding-bottom: 40px;
   &__icone {
     margin-bottom: 20px;
   }
 }
 
 .copiryght {
-  position: absolute;
-  width: 150px;
-  bottom: 120px;
-  left: -20px;
-  margin: 0;
   transform: rotate(-90deg);
+  text-wrap: nowrap;
+  margin: 20% 0 90% 0;
   color: #fff;
-  font-family: Roboto;
   font-size: 12px;
   font-weight: 500;
 }

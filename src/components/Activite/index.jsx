@@ -50,7 +50,7 @@ function Activite({ curentDatas }) {
           </text>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis
-            padding={{ left: -47, right: -47 }}
+            padding={{ left: -31, right: -47 }}
             tick={{ fill: '#9b9eac' }}
             stroke="#DEDEDE"
             tickLine={false}
